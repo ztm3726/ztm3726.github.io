@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>基于Hexo+Github pages的博客搭建 | MMJ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 2,
+      "unescape": turn,
+      "preload": turn
+      },
+    path: '-'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "between-clouds",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body>
+<div class="single">
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/post_cover.jpeg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
+    <span>2020-06-13</span>
+    <h2>基于Hexo+Githu...</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></div>
+    <div class="social-links">
+    <a href="https://github.com/yourname" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h1 id="基于Hexo-GitHub-pages的博客搭建"><a href="#基于Hexo-GitHub-pages的博客搭建" class="headerlink" title="基于Hexo+GitHub pages的博客搭建"></a>基于Hexo+GitHub pages的博客搭建</h1><blockquote>
+<p>“<strong>Yeah It’s on.</strong> ”</p>
+</blockquote>
+<p><strong>我的Blog 就这么开通了。</strong></p>
+<a id="more"></a>
+<p><strong>跳过废话，直接看技术实现</strong></p>
+<h2 id="搭建博客需要的东西"><a href="#搭建博客需要的东西" class="headerlink" title="搭建博客需要的东西"></a>搭建博客需要的东西<br></h2><ul>
+<li><strong><code>一个GitHub账号</code></strong> <a href="https://github.com/" target="_blank" rel="noopener"><strong>传送门&lt;–</strong></a></li>
+<li><strong><code>git for Windows</code></strong> <a href="https://git-scm.com/download/win" target="_blank" rel="noopener"><strong>传送门&lt;–</strong></a></li>
+<li><strong><code>node.js</code></strong> <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener"><strong>传送门&lt;–</strong></a></li>
+<li><strong><code>hexo</code></strong>  <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener"><strong>传送门&lt;–</strong></a><br></li>
+</ul>
+<h2 id="一-安装Node-js"><a href="#一-安装Node-js" class="headerlink" title="一 .安装Node.js"></a><strong>一 .安装Node.js</strong></h2><ul>
+<li><p><strong>点击上面的链接访问<code>Node.js</code>官网，下载长期支持版，双击安装下载下来的文件。没什么好说的，一路下一步，选项都是默认的。</strong><br><img src="https://i.loli.net/2020/06/14/E9jKoHeLPTwx6Oh.png" alt="图片"></p>
+<h2 id="二-安装Git"><a href="#二-安装Git" class="headerlink" title="二.安装Git"></a><strong>二.安装Git</strong></h2></li>
+<li><p><strong>点击上面的链接访问<code>Git</code>的官网，下载相应的版本，默认安装即可</strong><br><img src="https://i.loli.net/2020/06/14/jdSCMG1TmzYODXA.png" alt="图片"><br></p>
+</li>
+<li><p><strong>用win+r运行cmd，依次输入</strong></p>
+</li>
+</ul>
+<pre><code>git --version 
+node -v  
+npm -v</code></pre><ul>
+<li><p><strong>如果出现的版本信息，即安装成功</strong><br><br><img src="https://i.loli.net/2020/06/14/WAjhTXQ7KHp3Rua.png" alt="图片"><br></p>
+<h2 id="三-安装Hexo"><a href="#三-安装Hexo" class="headerlink" title="三.安装Hexo"></a><strong>三.安装Hexo</strong></h2></li>
+<li><p><strong>选择一个地方，新建一个文件夹，博客相关的文件将会存储在此文件夹中，然后在该文件夹下，点击鼠标右键，，打开 <code>Git Bash Here</code> ，依次输入下列命令<br><code>npm install hexo-cli -g</code><br><code>npm install hexo-deployer-git --save</code></strong><br></p>
+</li>
+<li><p><strong>安装完成后，输入 <code>hexo --v</code> 出现版本信息则安装成功</strong><br><br><img src="https://i.loli.net/2020/06/14/139bpsuw8Iq2meV.png" alt="图片"><br></p>
+<h2 id="四-生成Hexo静态网页"><a href="#四-生成Hexo静态网页" class="headerlink" title="四.生成Hexo静态网页"></a><strong>四.生成Hexo静态网页</strong></h2></li>
+<li><p><strong>在当前文件夹继续新建一个文件，进入文件夹，右键鼠标，打开 <code>Git Bash Here</code> ，输入 <code>hexo init</code>   等待下载，hexo将会下载一些工程文件到这个目录中去，整个下载过程可能比较漫长，请耐心等待</strong><br></p>
+</li>
+<li><p><strong>下载完毕后，在当前目录中将会多了许多文件，接着，我们运行 <code>hexo g</code> 生成网站的静态网页文件,命令运行完毕后，再运行 <code>hexo s</code> 使这个网站在本地先运行起来，如果出现 <code>Hexo is running at...</code> 我们在浏览器中打开 <code>http://localhost:4000</code></strong><br><br><img src="https://i.loli.net/2020/06/14/J3D2dTbgmhnY6ul.png" alt="x.png"><br><img src="https://i.loli.net/2020/06/14/x9vo7BLtdbMymZE.png" alt="图片"><br></p>
+</li>
+<li><p><strong>到目前为止，我们的本地博客就成功搭建了，但是现在我们只能通过本地连接查看博客，我们要做的是让其他人也能够访问我们的博客，这就需要我们将博客部署到Github Pages上</strong></p>
+<h2 id="五-配置GitHub"><a href="#五-配置GitHub" class="headerlink" title="五.配置GitHub"></a><strong>五.配置GitHub</strong></h2></li>
+<li><p><strong>用创建好的账号登录github，并创建一个仓库，仓库名为<code>xxx.github.io</code>，xxx为你的用户名，然后 <code>Creat repository</code>，因为我已经创建了这个仓库，所以出现了警告</strong><br><img src="https://i.loli.net/2020/06/14/pF1PfISg7EbTVjO.png" alt="1.png"><br></p>
+</li>
+<li><p><strong>仓库建好后，我们将使用git来获取SSH</strong><br></p>
+</li>
+<li><p><strong>点击鼠标右键，选择<code>Git Bash Here</code>，在Git Bash中输入：<code>ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</code>，接着，根据提示，你需要输入密码和确认密码（可以不用密码，就是到输密码的地方，都直接回车，所以每次push就只管回车就行了。）。此时，生成密钥后，在你电脑目录：C:\Users\你的计算机用户名.ssh 下，会生成两个文件</strong><br><br><img src="https://i.loli.net/2020/06/14/Cn2ZrDQA3PjfYS4.png" alt="图片"><br></p>
+</li>
+<li><p><strong>私钥：id_rsa</strong> </p>
+</li>
+<li><p><strong>公钥：id_rsa.pub</strong></p>
+</li>
+<li><p><strong>用记事本打开 <code>id_rsa.pub</code> ,复制里面的内容，然后访问 <code>https://github.com/settings/ssh</code> 点击右上角的 <code>New SSH key</code> ,出现如下界面</strong><br><img src="https://i.loli.net/2020/06/14/kfZoP9qRNj3tmMx.png" alt="图片"></p>
+</li>
+<li><p><strong><code>Title</code> 自己随便取，<code>Key</code> 为刚刚复制的内容</strong><br></p>
+</li>
+<li><p><strong>现在你已经可以通过 <code>SSH</code> 链接到 <code>GitHub</code> 了，还有一些个人信息需要完善的。<code>Git</code> 会根据用户的名字和邮箱来记录提交。<code>GitHub</code> 也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的。<code>GitHub</code> 就配置完了</strong><br><br><code>git config --global user.name &quot;your user.name&quot;</code><br><br><code>git config --global user.email &quot;your user.email&quot;</code></p>
+<h2 id="六-推送Hexo到GitGub-pages"><a href="#六-推送Hexo到GitGub-pages" class="headerlink" title="六.推送Hexo到GitGub pages"></a><strong>六.推送Hexo到GitGub pages</strong></h2></li>
+<li><p><strong>回到刚才创建好的博客文件夹，我们还需要修改些配置，这是博客文件夹下的目录结构</strong><br><img src="https://i.loli.net/2020/06/14/lsuM7AXrobg9GVm.png" alt="d.png"><br></p>
+</li>
+<li><p><strong>我们打开<code>_config.yml</code>,在最下面找到 <code>deploy</code> ，添加如下信息</strong><br><br><img src="https://i.loli.net/2020/06/14/GvjaeOJdWgnmwf7.png" alt="图片"><br></p>
+</li>
+<li><p><strong>配置完成后，我们继续在当前文件夹打开 <code>Git Bash Here</code> 输入 <code>hexo clean</code> (删除旧的 public 文件)，在输入 <code>hexo g -d</code> (生成新的 public 文件并开始部署)，这可能需要几分钟。当部署完成时，就可以在浏览器中输入 <code>xxx.github.io</code> (xxx改成你的用户名)就可以看到了 <code>Hexo + GitHub Pages</code>搭建的个人博客</strong></p>
+</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/07/06/3.arduino/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>arduino...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/06/09/2.title/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>我的第一个博客</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">MMJ</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button> 
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/avatar.jpeg" alt=""/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p></p>
+          <span class="tagline">发现更大的世界</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>全部</a></li>
+    
+    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://lx.js.org" target="_blank">Lx的博客</a></li>
+        <li> <a href="http://xsjhjj.xyz:4000" target="_blank">大佬的博客</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+
+
+</body>
+</html>
